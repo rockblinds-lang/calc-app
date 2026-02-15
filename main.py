@@ -28,6 +28,9 @@ diff = diam2 - diam1
 cl_change_mm = diff / 2
 cl_change_cm = cl_change_mm / 10
 
+ratio = diam2 / diam1
+real_speed = 100 * ratio
+
 st.divider()
 
 # --- ВИВІД РЕЗУЛЬТАТІВ КРАСИВИМИ КАРТКАМИ ---
