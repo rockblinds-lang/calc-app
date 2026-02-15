@@ -31,6 +31,37 @@ cl_change = diff / 2
 st.info("📊 ВЕРДИКТ:")
 st.metric("Кліренс змінить на", f"{round(cl_change, 2)} мм")
 st.metric("Реальна швидкість", f"{round(real_speed, 2)} км/год", delta=f"{round(real_speed-100, 2)} км/год")
+import matplotlib.pyplot as plt
+
+st.write("---")
+st.write("### 📸 Візуалізація змін")
+
+# Створюємо малюнок
+fig, ax = plt.subplots(figsize=(6, 6))
+
+# Розрахуємо радіуси для малювання (приклад спрощений)
+# r1 - старий радіус, r2 - новий радіус (візьмемо з ваших змінних)
+# Припустимо, у вас є змінні d1 та d2 (діаметри)
+r1 = d1 / 2
+r2 = d2 / 2
+
+# Малюємо колеса як кола
+circle1 = plt.Circle((0, 0), r1, color='gray', fill=False, linestyle='--', label='Старе колесо')
+circle2 = plt.Circle((0, 0), r2, color='blue', fill=False, linewidth=2, label='Нове колесо')
+
+ax.add_patch(circle1)
+ax.add_patch(circle2)
+
+# Налаштування осей
+limit = max(r1, r2) * 1.2
+ax.set_xlim(-limit, limit)
+ax.set_ylim(-limit, limit)
+ax.set_aspect('equal')
+plt.legend()
+plt.axis('off') # Ховаємо цифри координат
+
+# Відображаємо графік у Streamlit
+st.pyplot(fig)
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
