@@ -31,29 +31,30 @@ cl_change_cm = cl_change_mm / 10
 st.divider()
 
 # --- ВИВІД РЕЗУЛЬТАТІВ КРАСИВИМИ КАРТКАМИ ---
-st.write("### 📊 Порівняння результатів:")
-m_col1, m_col2, m_col3 = st.columns(3)
+import matplotlib.pyplot as plt
 
-m_col1.metric("Діаметр (1)", f"{diam1:.0f} мм")
-m_col2.metric("Діаметр (2)", f"{diam2:.1f} мм", f"{diff:.1f} мм")
-m_col3.metric("Кліренс", f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
+st.write("---")
+st.write("### 📸 Візуалізація змін")
 
-# Якщо зміна кліренсу велика, додамо колір (опціонально)
-if abs(cl_change_mm) > 10:
-    st.warning(f"⚠️ Кліренс зміниться на {cl_change_cm:.1f} см. Це суттєво!")
+fig, ax = plt.subplots(figsize=(6, 6))
+
+# Оновлюємо назви: використовуємо diam1 та diam2
+r1 = diam1 / 2
+r2 = diam2 / 2
+
+circle1 = plt.Circle((0, 0), r1, color='gray', fill=False, linestyle='--', label='Старе колесо')
+circle2 = plt.Circle((0, 0), r2, color='#0068c9', fill=False, linewidth=3, label='Нове колесо')
 
 ax.add_patch(circle1)
 ax.add_patch(circle2)
 
-# Налаштування осей
-limit = max(r1, r2) * 1.2
+limit = max(r1, r2) * 1.1
 ax.set_xlim(-limit, limit)
 ax.set_ylim(-limit, limit)
 ax.set_aspect('equal')
 plt.legend()
-plt.axis('off') # Ховаємо цифри координат
+plt.axis('off')
 
-# Відображаємо графік у Streamlit
 st.pyplot(fig)
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
