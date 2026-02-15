@@ -54,3 +54,18 @@ with st.expander("🎁 Отримати бонус від розробника")
     st.markdown("📞 **Телефонуйте: [Твій номер]**")
     if st.button("🌐 Перейти на сайт"):
         st.write("Перенаправлення...")
+import segno
+from io import BytesIO
+
+# Створюємо бічну панель для QR-коду
+with st.sidebar:
+    st.write("### Поділитися додатком")
+    
+    # Створюємо QR-код, який веде на адресу вашого сайту
+    url = " https://calc-app-bpnejes72n7bpfuukqudzb.streamlit.app/" # Перевірте, чи це ваша адреса
+    qr = segno.make(url)
+    
+    # Зберігаємо QR-код у пам'ять, щоб Streamlit міг його показати
+    out = BytesIO()
+    qr.save(out, kind='png', scale=10)
+    st.image(out.getvalue(), caption="Скануй та рахуй у смартфоні")
