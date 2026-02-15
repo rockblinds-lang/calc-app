@@ -1,53 +1,46 @@
 import streamlit as st
 
-# Налаштування сторінки, щоб вона не була занадто широкою
-st.set_page_config(page_title="Шинний Експерт", layout="centered")
+# 1. Налаштування сторінки
+st.set_page_config(page_title="ProTyre", layout="centered")
 
 st.title("ProTyre: Твій персональний шинний експерт")
-st.write("Порівняйте параметри для вашого авто:")
+st.info("**Перед купівлею шин проаналізуйте, чи не будуть колеса зачіпати арки та як зміняться параметри ходової!**")
 
-# --- ВВІД ДАНИХ (Великі повзунки для пальців) ---
-st.subheader("🏁 Заводський стандарт")
-w1 = st.select_slider("Ширина (1)", options=list(range(155, 355, 5)), value=295)
-p1 = st.select_slider("Профіль (1)", options=list(range(20, 85, 5)), value=35)
-r1 = st.number_input("Диск (1), дюймів", value=21, step=1)
+# --- ВВІД ДАНИХ У ДВІ КОЛОНКИ ---
+col1, col2 = st.columns(2)
 
-st.divider()
+with col1:
+    st.subheader("⬅️ Ваші поточні шини")
+    w1 = st.select_slider("Ширина (1)", options=list(range(135, 355, 5)), value=295, key="w1")
+    p1 = st.select_slider("Профіль (1)", options=list(range(20, 85, 5)), value=35, key="p1")
+    r1 = st.number_input("Диск (1), дюймів", value=21, step=1, key="r1")
 
-st.subheader("🆕 Нові шини")
-w2 = st.select_slider("Ширина (2)", options=list(range(155, 355, 5)), value=275)
-p2 = st.select_slider("Профіль (2)", options=list(range(20, 85, 5)), value=45)
-r2 = st.number_input("Диск (2), дюймів", value=21, step=1)
+with col2:
+    st.subheader("➡️ Нові шини")
+    w2 = st.select_slider("Ширина (2)", options=list(range(135, 355, 5)), value=275, key="w2")
+    p2 = st.select_slider("Профіль (2)", options=list(range(20, 85, 5)), value=45, key="p2")
+    r2 = st.number_input("Диск (2), дюймів", value=21, step=1, key="r2")
 
 # --- МАТЕМАТИКА ---
 diam1 = (w1 * p1 / 100 * 2) + (r1 * 25.4)
 diam2 = (w2 * p2 / 100 * 2) + (r2 * 25.4)
 diff = diam2 - diam1
-ratio = diam2 / diam1
-real_speed = 100 * ratio
-cl_change = diff / 2
+cl_change_mm = diff / 2
+cl_change_cm = cl_change_mm / 10
 
-# --- РЕЗУЛЬТАТ (Великі плашки) ---
-st.info("📊 ВЕРДИКТ:")
-st.metric("Кліренс змінить на", f"{round(cl_change, 2)} мм")
-st.metric("Реальна швидкість", f"{round(real_speed, 2)} км/год", delta=f"{round(real_speed-100, 2)} км/год")
-import matplotlib.pyplot as plt
+st.divider()
 
-st.write("---")
-st.write("### 📸 Візуалізація змін")
+# --- ВИВІД РЕЗУЛЬТАТІВ КРАСИВИМИ КАРТКАМИ ---
+st.write("### 📊 Порівняння результатів:")
+m_col1, m_col2, m_col3 = st.columns(3)
 
-# Створюємо малюнок
-fig, ax = plt.subplots(figsize=(6, 6))
+m_col1.metric("Діаметр (1)", f"{diam1:.0f} мм")
+m_col2.metric("Діаметр (2)", f"{diam2:.1f} мм", f"{diff:.1f} мм")
+m_col3.metric("Кліренс", f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
 
-# Розрахуємо радіуси для малювання (приклад спрощений)
-# r1 - старий радіус, r2 - новий радіус (візьмемо з ваших змінних)
-# Припустимо, у вас є змінні d1 та d2 (діаметри)
-r1 = diam1 / 2
-r2 = diam2 / 2
-
-# Малюємо колеса як кола
-circle1 = plt.Circle((0, 0), r1, color='gray', fill=False, linestyle='--', label='Старе колесо')
-circle2 = plt.Circle((0, 0), r2, color='blue', fill=False, linewidth=2, label='Нове колесо')
+# Якщо зміна кліренсу велика, додамо колір (опціонально)
+if abs(cl_change_mm) > 10:
+    st.warning(f"⚠️ Кліренс зміниться на {cl_change_cm:.1f} см. Це суттєво!")
 
 ax.add_patch(circle1)
 ax.add_patch(circle2)
