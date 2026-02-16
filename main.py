@@ -1,5 +1,34 @@
 import streamlit as st
 
+# 1. Наш словник перекладів
+translations = {
+    "UA": {
+        "header_current": "⬅️ Ваші поточні шини",
+        "header_new": "➡️ Нові шини (плановані)",
+        "width": "Ширина",
+        "profile": "Профіль",
+        "rim": "Діаметр диска (дюйми)",
+        "warning_text": "Увага! Зміна кліренсу:"
+    },
+    "EN": {
+        "header_current": "⬅️ Your current tires",
+        "header_new": "➡️ New tires (planned)",
+        "width": "Width",
+        "profile": "Profile",
+        "rim": "Rim diameter (inches)",
+        "warning_text": "Warning! Clearance change:"
+    },
+    "PL": {
+        "header_current": "⬅️ Twoje aktualne opony",
+        "header_new": "➡️ Nowe opony (planowane)",
+        "width": "Szerokość",
+        "profile": "Profil",
+        "rim": "Średnica felgi (cale)",
+        "warning_text": "Uwaga! Zmiana prześwitu:"
+    }
+}
+import streamlit as st
+
 # 1. Налаштування сторінки
 st.set_page_config(page_title="ProTyre", layout="centered")
 
