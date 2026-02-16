@@ -41,7 +41,7 @@ translations = {
         "clearance_check": "Prześwit zmieni się o {cm:.1f} cm. Sprawdź nadkola!",
         "special_offer": "SPECJALNA OFERTA OD DEWELOPERA"
     },
-}
+},
 
 # Вибір мови в боковій панелі
 lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
