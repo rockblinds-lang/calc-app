@@ -21,25 +21,39 @@ with col2:
     p2 = st.select_slider("Профіль (2)", options=list(range(20, 85, 5)), value=45, key="p2")
     r2 = st.number_input("Диск (2), дюймів", value=21, step=1, key="r2")
 
-# --- МАТЕМАТИКА ---
+# --- МАТЕМАТИКА (повна версія) ---
 diam1 = (w1 * p1 / 100 * 2) + (r1 * 25.4)
 diam2 = (w2 * p2 / 100 * 2) + (r2 * 25.4)
 diff = diam2 - diam1
 cl_change_mm = diff / 2
 cl_change_cm = cl_change_mm / 10
 
+# Розрахунок швидкості
 ratio = diam2 / diam1
-real_speed = 100 * ratio
+real_speed = 100 * ratio  # швидкість при 100 км/год на спідометрі
+speed_diff = real_speed - 100
 
 st.divider()
 
-# --- ВИВІД РЕЗУЛЬТАТІВ КРАСИВИМИ КАРТКАМИ ---
-import matplotlib.pyplot as plt
+# --- ВИВІД РЕЗУЛЬТАТІВ ---
+st.write(f"### {t['results']}") # Використовуємо наш словник для заголовка
 
-st.write("---")
-st.write("### 📸 Візуалізація змін")
+# Створюємо 4 картки для всіх показників
+m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 
-fig, ax = plt.subplots(figsize=(6, 6))
+m_col1.metric(t["diameter"] + " 1", f"{diam1:.0f} мм")
+m_col2.metric(t["diameter"] + " 2", f"{diam2:.1f} мм", f"{diff:.1f} мм")
+m_col3.metric(t["clearance"], f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
+m_col4.metric("Швидкість", f"{real_speed:.1f} км/год", f"{speed_diff:.1f}%")
+
+# --- РОЗУМНІ ПОПЕРЕДЖЕННЯ ---
+if abs(speed_diff) > 3:
+    st.error(f"⚠️ Похибка спідометра: {speed_diff:.1f}%. Це перевищує допустимі 3%!")
+elif abs(speed_diff) > 1.5:
+    st.warning(f"🔔 Зверніть увагу: похибка спідометра {speed_diff:.1f}%")
+
+if abs(cl_change_mm) > 15:
+    st.warning(f"⚠️ Кліренс зміниться на {cl_change_cm:.1f} см. Перевірте арки!")
 
 # Оновлюємо назви: використовуємо diam1 та diam2
 r1 = diam1 / 2
