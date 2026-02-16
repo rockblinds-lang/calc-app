@@ -117,7 +117,7 @@ else:
 
 
 if abs(cl_change_mm) > 15:
-    st.warning(t["clearance_check"].format(cm=diff_cm))
+     st.warning(t["clearance_check"].format(cm=diff_cm))
 
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
