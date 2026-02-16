@@ -33,7 +33,7 @@ translations = {
     },
 "result_warn": "⚠️ Uwaga! Zmiana prześwitu:",
 "danger_msg": "**Przed zakupem opon przeanalizuj, jak zmienią się parametry Twojego zawieszenia!**"
-}
+},
 
 # Вибір мови в боковій панелі
 lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
