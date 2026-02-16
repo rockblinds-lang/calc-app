@@ -10,6 +10,9 @@ translations = {
         "rim": "Діаметр диска (дюйми)",
         "warning_text": "Увага! Зміна кліренсу:"
     },
+    "result_warn": "⚠️ Увага! Зміна кліренсу:",
+"danger_msg": "**Перед купівлею шин проаналізуйте, як зміняться параметри вашої ходової!**"
+
     "EN": {
         "header_current": "⬅️ Your current tires",
         "header_new": "➡️ New tires (planned)",
@@ -18,6 +21,8 @@ translations = {
         "rim": "Rim diameter (inches)",
         "warning_text": "Warning! Clearance change:"
     },
+"result_warn": "⚠️ Warning! Clearance change:",
+"danger_msg": "**Before buying tires, analyze how your suspension parameters will change!**"
     "PL": {
         "header_current": "⬅️ Twoje aktualne opony",
         "header_new": "➡️ Nowe opony (planowane)",
@@ -26,7 +31,10 @@ translations = {
         "rim": "Średnica felgi (cale)",
         "warning_text": "Uwaga! Zmiana prześwitu:"
     }
+"result_warn": "⚠️ Uwaga! Zmiana prześwitu:",
+"danger_msg": "**Przed zakupem opon przeanalizuj, jak zmienią się parametry Twojego zawieszenia!**"
 }
+
 # Вибір мови в боковій панелі
 lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
 t = translations[lang]
