@@ -10,7 +10,7 @@ translations = {
         "rim": "Діаметр диска (дюйми)",
         "warning_text": "Увага! Зміна кліренсу:",
         "result_warn": "⚠️ Увага! Зміна кліренсу:",
-        "danger_msg": "**Перед купівлею шин проаналізуйте, як зміняться параметри вашої ходової!**"
+        "danger_msg": "**Перед купівлею шин проаналізуйте, як зміняться параметри вашої ходової!**",
         "speedo_too_much": "Похибка спідометра: {err:.1f}%. Це забагато!",
         "clearance_check": "Кліренс зміниться на {cm:.1f} см. Перевірте арки!",
         "special_offer": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА"
@@ -23,7 +23,7 @@ translations = {
         "rim": "Rim diameter (inches)",
         "warning_text": "Warning! Clearance change:",
         "result_warn": "⚠️ Warning! Clearance change:",
-        "danger_msg": "**Before buying tires, analyze how your suspension parameters will change!**"
+        "danger_msg": "**Before buying tires, analyze how your suspension parameters will change!**",
         "speedo_too_much": "Speedometer error: {err:.1f}%. This is too much!",
         "clearance_check": "Clearance will change by {cm:.1f} cm. Check the arches!",
         "special_offer": "SPECIAL OFFER FROM THE DEVELOPER"
@@ -36,12 +36,12 @@ translations = {
         "rim": "Średnica felgi (cale)",
         "warning_text": "Uwaga! Zmiana prześwitu:",
         "result_warn": "⚠️ Uwaga! Zmiana prześwitu:",
-        "danger_msg": "**Przed zakupem opon przeanalizuj, jak zmienią się parametry Twojego zawieszenia!**"
+        "danger_msg": "**Przed zakupem opon przeanalizuj, jak zmienią się parametry Twojego zawieszenia!**",
         "speedo_too_much": "Błąd prędkościomierza: {err:.1f}%. To za dużo!",
         "clearance_check": "Prześwit zmieni się o {cm:.1f} cm. Sprawdź nadkola!",
         "special_offer": "SPECJALNA OFERTA OD DEWELOPERA"
     },
-},
+}
 
 # Вибір мови в боковій панелі
 lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
