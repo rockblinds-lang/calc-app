@@ -103,7 +103,7 @@ m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 
 m_col1.metric("Діаметр 1", f"{diam1:.0f} мм")
 m_col2.metric("Діаметр 2", f"{diam2:.1f} мм", f"{diff:.1f} мм")
-m_col3.metric("Кліренс", f"{cl_change_cm:.1f} см")
+m_col3.metric("Кліренс", f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
 m_col4.metric("Швидкість", f"{real_speed:.1f} км/год", f"{speed_diff:.1f}%")
 
 # --- ПОПЕРЕДЖЕННЯ ---
