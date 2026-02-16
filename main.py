@@ -32,7 +32,7 @@ lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
 t = translations[lang]
 
 # 3. Створюємо коротку змінну 't', яка буде містити слова обраної мови
-t = translations[lang_choice]
+t = translations[lang]
 
 import streamlit as st
 
