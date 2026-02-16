@@ -44,7 +44,7 @@ translations = {
         "speedo_too_much": "Błąd prędkościomierza: {err:.1f}%. To za dużo!",
         "clearance_check": "Prześwit zmieni się o {cm:.1f} cm. Sprawdź nadkola!",
         "special_offer": "SPECJALNA OFERTA OD DEWELOPERA",
-         "disclaimer": "⚠️ To narzędzie służy wyłącznie do celów informacyjnych; przed wymianą opon skonsultuj się ze specjalistą.",
+        "disclaimer": "⚠️ To narzędzie służy wyłącznie do celów informacyjnych; przed wymianą opon skonsultuj się ze specjalistą.",
         "speedo_ok": "Błąd prędkościomierza mieści się w normie ({err:.1f}%)"
     },
 }
