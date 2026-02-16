@@ -95,7 +95,8 @@ speed_diff = real_speed - 100
 st.divider()
 
 # --- ВИВІД РЕЗУЛЬТАТІВ ---
-st.write("### 📊 Порівняння результатів:")
+st.write("---")
+st.subheader(f"📊 {t.get('header_comparison', 'Порівняння результатів')}:")
 
 # Створюємо 4 колонки
 m_col1, m_col2, m_col3, m_col4 = st.columns(4)
@@ -106,13 +107,18 @@ m_col3.metric("Кліренс", f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f}
 m_col4.metric("Швидкість", f"{real_speed:.1f} км/год", f"{speed_diff:.1f}%")
 
 # --- ПОПЕРЕДЖЕННЯ ---
-if abs(speed_diff) > 3:
-    st.error(f"⚠️ Похибка спідометра: {speed_diff:.1f}%. Це забагато!")
-elif abs(speed_diff) > 1.5:
-    st.warning(f"🔔 Похибка спідометра: {speed_diff:.1f}%")
+error_percent = abs(speed_diff)
+if error_percent > 3.0:
+    # Використовуємо ключ "speedo_too_much" зі словника
+    st.error(t["speedo_too_much"].format(err=error_percent))
+else:
+    # Використовуємо новий ключ "speedo_ok"
+    st.success(t["speedo_ok"].format(err=error_percent))
+
 
 if abs(cl_change_mm) > 15:
-    st.warning(f"⚠️ Кліренс зміниться на {cl_change_cm:.1f} см. Перевірте арки!")
+   st.warning(t["clearance_check"].format(cm=diff_cm))
+
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
