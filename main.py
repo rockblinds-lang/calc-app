@@ -30,7 +30,7 @@ translations = {
         "profile": "Profil",
         "rim": "Średnica felgi (cale)",
         "warning_text": "Uwaga! Zmiana prześwitu:"
-    }
+    },
 "result_warn": "⚠️ Uwaga! Zmiana prześwitu:",
 "danger_msg": "**Przed zakupem opon przeanalizuj, jak zmienią się parametry Twojego zawieszenia!**"
 }
