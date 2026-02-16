@@ -14,6 +14,8 @@ translations = {
         "speedo_too_much": "Похибка спідометра: {err:.1f}%. Це забагато!",
         "clearance_check": "Кліренс зміниться на {cm:.1f} см. Перевірте арки!",
         "special_offer": "СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА"
+        "disclaimer": "⚠️ Цей інструмент надає інформацію для ознайомлення; перед заміною шин проконсультуйтеся з фахівцем.",
+        "speedo_ok": "Похибка спідометра в межах норми ({err:.1f}%)"
     },
     "EN": {
         "header_current": "⬅️ Your current tires",
@@ -27,6 +29,8 @@ translations = {
         "speedo_too_much": "Speedometer error: {err:.1f}%. This is too much!",
         "clearance_check": "Clearance will change by {cm:.1f} cm. Check the arches!",
         "special_offer": "SPECIAL OFFER FROM THE DEVELOPER"
+        "disclaimer": "⚠️ This tool is for informational purposes only; consult a specialist before changing tires.",
+        "speedo_ok": "Speedometer error is within normal range ({err:.1f}%)"
     },
     "PL": {
         "header_current": "⬅️ Twoje aktualne opony",
@@ -40,6 +44,8 @@ translations = {
         "speedo_too_much": "Błąd prędkościomierza: {err:.1f}%. To za dużo!",
         "clearance_check": "Prześwit zmieni się o {cm:.1f} cm. Sprawdź nadkola!",
         "special_offer": "SPECJALNA OFERTA OD DEWELOPERA"
+         "disclaimer": "⚠️ To narzędzie służy wyłącznie do celów informacyjnych; przed wymianą opon skonsultuj się ze specjalistą.",
+        "speedo_ok": "Błąd prędkościomierza mieści się w normie ({err:.1f}%)"
     },
 }
 
