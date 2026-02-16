@@ -42,19 +42,20 @@ st.title("ProTyre: Твій персональний шинний експерт
 st.info("**Перед купівлею шин проаналізуйте, чи не будуть колеса зачіпати арки та як зміняться параметри ходової!**")
 
 # --- ВВІД ДАНИХ У ДВІ КОЛОНКИ ---
+# --- ВАШ ОНОВЛЕНИЙ ВВІД ДАНИХ ---
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("⬅️ Ваші поточні шини")
-    w1 = st.select_slider("Ширина (1)", options=list(range(135, 355, 5)), value=295, key="w1")
-    p1 = st.select_slider("Профіль (1)", options=list(range(20, 85, 5)), value=35, key="p1")
-    r1 = st.number_input("Диск (1), дюймів", value=21, step=1, key="r1")
+    st.subheader(t["header_current"]) # Використовуємо словник
+    w1 = st.select_slider(f"{t['width']} (1)", options=list(range(135, 355, 5)), value=295, key="w1")
+    p1 = st.select_slider(f"{t['profile']} (1)", options=list(range(20, 85, 5)), value=35, key="p1")
+    r1 = st.number_input(f"{t['rim']} (1)", value=21, step=1, key="r1")
 
 with col2:
-    st.subheader("➡️ Нові шини")
-    w2 = st.select_slider("Ширина (2)", options=list(range(135, 355, 5)), value=275, key="w2")
-    p2 = st.select_slider("Профіль (2)", options=list(range(20, 85, 5)), value=45, key="p2")
-    r2 = st.number_input("Диск (2), дюймів", value=21, step=1, key="r2")
+    st.subheader(t["header_new"]) # Використовуємо словник
+    w2 = st.select_slider(f"{t['width']} (2)", options=list(range(135, 355, 5)), value=275, key="w2")
+    p2 = st.select_slider(f"{t['profile']} (2)", options=list(range(20, 85, 5)), value=45, key="p2")
+    r2 = st.number_input(f"{t['rim']} (2)", value=21, step=1, key="r2")
 
 # --- МАТЕМАТИКА (повна версія) ---
 # --- МАТЕМАТИКА ---
