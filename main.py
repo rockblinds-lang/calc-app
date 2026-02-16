@@ -27,6 +27,12 @@ translations = {
         "warning_text": "Uwaga! Zmiana prześwitu:"
     }
 }
+# 2. Створюємо випадаючий список у боковій панелі
+lang_choice = st.sidebar.selectbox("Виберіть мову / Choose language", ["UA", "EN", "PL"])
+
+# 3. Створюємо коротку змінну 't', яка буде містити слова обраної мови
+t = translations[lang_choice]
+
 import streamlit as st
 
 # 1. Налаштування сторінки
