@@ -27,8 +27,9 @@ translations = {
         "warning_text": "Uwaga! Zmiana prześwitu:"
     }
 }
-# 2. Створюємо випадаючий список у боковій панелі
-lang_choice = st.sidebar.selectbox("Виберіть мову / Choose language", ["UA", "EN", "PL"])
+# Вибір мови в боковій панелі
+lang = st.sidebar.selectbox("Language / Мова", ["UA", "EN", "PL"])
+t = translations[lang]
 
 # 3. Створюємо коротку змінну 't', яка буде містити слова обраної мови
 t = translations[lang_choice]
@@ -109,10 +110,10 @@ if abs(real_speed - 100) > 3:
 
 # Твій Рекламний Блок
 with st.expander("🎁 Отримати бонус від розробника"):
-    st.success("Якісні жалюзі та ролети від 'РОМАН'")
+    st.success("Якісні жалюзі та ролети від 'РОМІГО'")
     st.write("☀️ Захистіть свою оселю від сонця!")
-    st.markdown("📞 **Телефонуйте: [Твій номер]**")
-    if st.button("🌐 Перейти на сайт"):
+    st.markdown("📞 **Телефонуйте: 067 244 45 03 **")
+    if st.button("🌐 www.zaluzi.com.ua"):
         st.write("Перенаправлення...")
 import segno
 from io import BytesIO
