@@ -22,6 +22,7 @@ with col2:
     r2 = st.number_input("Диск (2), дюймів", value=21, step=1, key="r2")
 
 # --- МАТЕМАТИКА (повна версія) ---
+# --- МАТЕМАТИКА ---
 diam1 = (w1 * p1 / 100 * 2) + (r1 * 25.4)
 diam2 = (w2 * p2 / 100 * 2) + (r2 * 25.4)
 diff = diam2 - diam1
@@ -30,49 +31,30 @@ cl_change_cm = cl_change_mm / 10
 
 # Розрахунок швидкості
 ratio = diam2 / diam1
-real_speed = 100 * ratio  # швидкість при 100 км/год на спідометрі
+real_speed = 100 * ratio
 speed_diff = real_speed - 100
 
 st.divider()
 
 # --- ВИВІД РЕЗУЛЬТАТІВ ---
-st.write(f"### {t['results']}") # Використовуємо наш словник для заголовка
+st.write("### 📊 Порівняння результатів:")
 
-# Створюємо 4 картки для всіх показників
+# Створюємо 4 колонки
 m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 
-m_col1.metric(t["diameter"] + " 1", f"{diam1:.0f} мм")
-m_col2.metric(t["diameter"] + " 2", f"{diam2:.1f} мм", f"{diff:.1f} мм")
-m_col3.metric(t["clearance"], f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
+m_col1.metric("Діаметр 1", f"{diam1:.0f} мм")
+m_col2.metric("Діаметр 2", f"{diam2:.1f} мм", f"{diff:.1f} мм")
+m_col3.metric("Кліренс", f"{cl_change_mm:.1f} мм", f"{cl_change_cm:.1f} см")
 m_col4.metric("Швидкість", f"{real_speed:.1f} км/год", f"{speed_diff:.1f}%")
 
-# --- РОЗУМНІ ПОПЕРЕДЖЕННЯ ---
+# --- ПОПЕРЕДЖЕННЯ ---
 if abs(speed_diff) > 3:
-    st.error(f"⚠️ Похибка спідометра: {speed_diff:.1f}%. Це перевищує допустимі 3%!")
+    st.error(f"⚠️ Похибка спідометра: {speed_diff:.1f}%. Це забагато!")
 elif abs(speed_diff) > 1.5:
-    st.warning(f"🔔 Зверніть увагу: похибка спідометра {speed_diff:.1f}%")
+    st.warning(f"🔔 Похибка спідометра: {speed_diff:.1f}%")
 
 if abs(cl_change_mm) > 15:
     st.warning(f"⚠️ Кліренс зміниться на {cl_change_cm:.1f} см. Перевірте арки!")
-
-# Оновлюємо назви: використовуємо diam1 та diam2
-r1 = diam1 / 2
-r2 = diam2 / 2
-
-circle1 = plt.Circle((0, 0), r1, color='gray', fill=False, linestyle='--', label='Старе колесо')
-circle2 = plt.Circle((0, 0), r2, color='#0068c9', fill=False, linewidth=3, label='Нове колесо')
-
-ax.add_patch(circle1)
-ax.add_patch(circle2)
-
-limit = max(r1, r2) * 1.1
-ax.set_xlim(-limit, limit)
-ax.set_ylim(-limit, limit)
-ax.set_aspect('equal')
-plt.legend()
-plt.axis('off')
-
-st.pyplot(fig)
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
