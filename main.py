@@ -35,6 +35,11 @@ translations = {
         "label_diam2": "Diameter 2",
         "label_clearance": "Clearance",
         "label_speed": "Speed",
+        "header_comparison": "Comparison Results",
+        "label_diam1": "Diameter 1",
+        "label_diam2": "Diameter 2",
+        "label_clearance": "Clearance",
+        "label_speed": "Speed",
         "header_comparison": "Comparison Results"
     },
     "PL": {
