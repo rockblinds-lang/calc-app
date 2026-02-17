@@ -89,9 +89,8 @@ import streamlit as st
 # 1. Налаштування сторінки
 st.set_page_config(page_title="ProTyre", layout="centered")
 
-st.title("ProTyre: Твій персональний шинний експерт")
-st.info("**Перед купівлею шин проаналізуйте, чи не будуть колеса зачіпати арки та як зміняться параметри ходової!**")
-
+st.title(t["main_title"])
+st.info(t["sub_title"])
 # --- ВВІД ДАНИХ У ДВІ КОЛОНКИ ---
 # --- ВАШ ОНОВЛЕНИЙ ВВІД ДАНИХ ---
 col1, col2 = st.columns(2)
