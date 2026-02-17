@@ -30,7 +30,12 @@ translations = {
         "clearance_check": "Clearance will change by {cm:.1f} cm. Check the arches!",
         "special_offer": "SPECIAL OFFER FROM THE DEVELOPER",
         "disclaimer": "⚠️ This tool is for informational purposes only; consult a specialist before changing tires.",
-        "speedo_ok": "Speedometer error is within normal range ({err:.1f}%)"
+        "speedo_ok": "Speedometer error is within normal range ({err:.1f}%)",
+        "label_diam1": "Diameter 1",
+        "label_diam2": "Diameter 2",
+        "label_clearance": "Clearance",
+        "label_speed": "Speed",
+        "header_comparison": "Comparison Results"
     },
     "PL": {
         "header_current": "⬅️ Twoje aktualne opony",
