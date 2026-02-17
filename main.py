@@ -123,8 +123,7 @@ st.divider()
 
 # --- ВИВІД РЕЗУЛЬТАТІВ ---
 st.write("---")
-st.subheader(f"📊 {t['pay_attention']}")
-
+st.subheader(f"📊 {t.get('header_comparison', 'Порівняння результатів')}:")
 # Створюємо 4 колонки
 m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 
