@@ -3,6 +3,11 @@ import streamlit as st
 # 1. Наш словник перекладів
 translations = {
     "UA": {
+
+        "main_title": "ProTyre: Твій персональний шинний експерт",
+        "sub_title": "Перед купівлею шин проаналізуйте, чи не будуть колеса зачіпати арки та як зміняться параметри ходової!",
+        "pay_attention": "Pay Attention",
+        "clearance_check": "Увага! Кліренс зміниться на {cm} см. Це може вплинути на керованість.",
         "header_current": "⬅️ Ваші поточні шини",
         "header_new": "➡️ Нові шини (плановані)",
         "header_comparison": "📊 Порівняння результатів",
@@ -23,6 +28,10 @@ translations = {
         "speedo_ok": "Похибка спідометра в межах норми ({err:.1f}%)"
     },
     "EN": {
+        "main_title": "ProTyre: Your Personal Tire Expert",
+        "sub_title": "Before buying tires, analyze whether the wheels will hit the arches and how the suspension parameters will change!",
+        "pay_attention": "Pay Attention",
+        "clearance_check": "Warning! Clearance will change by {cm} cm. This may affect handling.",
         "header_current": "⬅️ Your current tires",
         "header_new": "➡️ New tires (planned)",
         "header_comparison": "📊 Comparison Results",
@@ -43,6 +52,10 @@ translations = {
         "speedo_ok": "Speedometer error is within normal range ({err:.1f}%)"
     },
     "PL": {
+        "main_title": "ProTyre: Twój osobisty ekspert oponiarski",
+        "sub_title": "Przed zakupem opon przeanalizuj, czy koła nie będą ocierać o nadkola i jak zmienią się parametry zawieszenia!",
+        "pay_attention": "Pay Attention",
+        "clearance_check": "Uwaga! Prześwit zmieni się o {cm} cm. Może to wpłynąć na prowadzenie.",
         "header_current": "⬅️ Twoje aktualne opony",
         "header_new": "➡️ Nowe opony (planowane)",
         "header_comparison": "📊 Porównanie wyników",
