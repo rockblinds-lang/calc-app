@@ -154,7 +154,7 @@ st.markdown("""
 ☀️ Захистіть свою оселю від яскравості сонця!  
 📍 м. Львів, вул. Зелена 115з (вхід з вул.Півколо)  
 📞 **Телефонуйте: 067 244 45 03**
-Станьте підписником: https://www.facebook.com/romigozaluzi/
+**про АКЦІЇ тут: https://www.facebook.com/romigozaluzi/**
 """)
 if st.button("🌐 Перейти на наш сайт"):
     st.write("www.zaluzi.com.ua")
