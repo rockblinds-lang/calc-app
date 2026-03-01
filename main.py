@@ -172,15 +172,17 @@ with st.expander("🎁 Отримати бонус від розробника")
 import segno
 from io import BytesIO
 
-# Створюємо бічну панель для QR-коду
 with st.sidebar:
     st.write("### Поділитися додатком")
     
-    # Створюємо QR-код, який веде на адресу вашого сайту
-    url = "https://bit.ly".replace("/--/", "") 
-    qr = segno.make(url)
+    # Ваше нове робоче посилання
+    url = "https://bit.ly"
     
-    # Зберігаємо QR-код у пам'ять, щоб Streamlit міг його показати
+    # Створюємо стандартний QR (не Micro), щоб він легко зчитувався
+    qr = segno.make(url, micro=False)
+    
     out = BytesIO()
-    qr.save(out, kind='png', scale=10)
+    # scale=10 забезпечує високу чіткість при скануванні з екрана
+    qr.save(out, kind='png', scale=10, border=4)
+    
     st.image(out.getvalue(), caption="Скануй та рахуй у смартфоні")
