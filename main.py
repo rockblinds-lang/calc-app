@@ -177,7 +177,7 @@ with st.sidebar:
     st.write("### Поділитися додатком")
     
     # Створюємо QR-код, який веде на адресу вашого сайту
-    url = " https://calc-app-bpnejes72n7bpfuukqudzb.streamlit.app/" # Перевірте, чи це ваша адреса
+    url = " https://bit.ly/46BcAOl/" # Перевірте, чи це ваша адреса
     qr = segno.make(url)
     
     # Зберігаємо QR-код у пам'ять, щоб Streamlit міг його показати
