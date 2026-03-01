@@ -176,11 +176,12 @@ from io import BytesIO
 with st.sidebar:
     st.write("### Поділитися додатком")
     
-    # Пряма адреса без посередників
-    url = "https://protyre.streamlit.app" 
+    # Створюємо QR-код, який веде на адресу вашого сайту
+    url = " https://calc-app-bpnejes72n7bpfuukqudzb.streamlit.app/" # Перевірте, чи це ваша адреса
     qr = segno.make(url)
     
-    # Зберігаємо та показуємо
+    # Зберігаємо QR-код у пам'ять, щоб Streamlit міг його показати
     out = BytesIO()
     qr.save(out, kind='png', scale=10)
     st.image(out.getvalue(), caption="Скануй та рахуй у смартфоні")
+
