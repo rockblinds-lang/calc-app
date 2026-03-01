@@ -171,21 +171,16 @@ with st.expander("🎁 Отримати бонус від розробника")
         st.write("Перенаправлення...")
 import segno
 from io import BytesIO
-import streamlit as st
 
 # Створюємо бічну панель для QR-коду
 with st.sidebar:
     st.write("### Поділитися додатком")
     
-    # ПРЯМЕ ПОСИЛАННЯ З ВЕЛИКИМИ ЛІТЕРАМИ
-    url = "https://bit.ly" 
+    # Пряма адреса без посередників
+    url = "https://protyre.streamlit.app" 
+    qr = segno.make(url)
     
-    # Створюємо QR-код
-    qr = segno.make(url, micro=False)
-    
-    # Зберігаємо QR-код у пам'ять
+    # Зберігаємо та показуємо
     out = BytesIO()
-    qr.save(out, kind='png', scale=10, border=4)
-    
-    # Виводимо зображення
+    qr.save(out, kind='png', scale=10)
     st.image(out.getvalue(), caption="Скануй та рахуй у смартфоні")
