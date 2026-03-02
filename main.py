@@ -1,18 +1,5 @@
-import streamlit as st
+iimport streamlit as st
 
-# Додайте цей блок на самому початку файлу
-components.html(
-    """
-    <script async src="https://www.googletagmanager.com"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-V589LFJ6DD');
-    </script>
-    """,
-    height=0,
-)
 # 1. Наш словник перекладів
 translations = {
     "UA": {
