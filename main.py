@@ -1,23 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
-
-# Вставте це замість старого блоку з помилкою:
-<script async src="https://www.googletagmanager.com"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-V589LFJ6DD');
-    </script>
-    """,
-    height=0,
-)
-
-# Виклик функції для запуску відстежування
-
-
-# Далі йде ваш основний код калькулятора...
-st.title("Шинний калькулятор ProTyre")
 
 # 1. Наш словник перекладів
 translations = {
@@ -170,9 +151,9 @@ if abs(cl_change_mm) > 15:
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
 st.markdown("""
 **Якісні жалюзі та ролети від "РОМІГО"**  
-"☀️" Захистіть свою оселю від яскравості сонця!  
-"📍" м. Львів, вул. Зелена 115з (вхід з вул.Півколо),__ТК"Південний" навпроти поліклініки "Веселка"  
-"📞" **Телефонуйте: 067 244 45 03  **
+☀️ Захистіть свою оселю від яскравості сонця!  
+📍 м. Львів, вул. Зелена 115з (вхід з вул.Півколо),__ТК"Південний" навпроти поліклініки "Веселка"  
+📞 **Телефонуйте: 067 244 45 03  **
 **про новинки та АКЦІЇ тут: https://www.facebook.com/romigozaluzi/**
 """)
 if st.button("🌐 Перейти на наш сайт"):
