@@ -3,11 +3,11 @@ import streamlit.components.v1 as components
 
 # Вставте це замість старого блоку з помилкою:
 components.html(
-    f"""
+    """
     <script async src="https://www.googletagmanager.com"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){{dataLayer.push(arguments);}}
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-V589LFJ6DD');
     </script>
