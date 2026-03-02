@@ -1,19 +1,18 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# Налаштування Google Analytics 4
-def inject_ga():
-    ga_id = "G-V589LFJ6DD" # Ваш ID
-    ga_js = f"""
-        <script async src="https://www.googletagmanager.com{ga_id}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){{dataLayer.push(arguments);}}
-            gtag('js', new Date());
-            gtag('config', '{ga_id}');
-        </script>
-    """
-    components.html(ga_js, height=0)
+# ВСТАВТЕ ЦЕЙ БЛОК:
+ga_id = "G-V589LFJ6DD"
+ga_js = f"""
+    <script async src="https://www.googletagmanager.com{ga_id}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', '{ga_id}');
+    </script>
+"""
+components.html(ga_js, height=0)
 
 # Виклик функції для запуску відстежування
 inject_ga()
