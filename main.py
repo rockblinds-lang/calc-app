@@ -1,18 +1,19 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# ВСТАВТЕ ЦЕЙ БЛОК:
-ga_id = "G-V589LFJ6DD"
-ga_js = f"""
-    <script async src="https://www.googletagmanager.com{ga_id}"></script>
+# Вставте це замість старого блоку з помилкою:
+components.html(
+    f"""
+    <script async src="https://www.googletagmanager.com"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){{dataLayer.push(arguments);}}
         gtag('js', new Date());
-        gtag('config', '{ga_id}');
+        gtag('config', 'G-V589LFJ6DD');
     </script>
-"""
-components.html(ga_js, height=0)
+    """,
+    height=0,
+)
 
 # Виклик функції для запуску відстежування
 inject_ga()
