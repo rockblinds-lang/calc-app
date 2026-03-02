@@ -1,5 +1,18 @@
 import streamlit as st
 
+# Додайте цей блок на самому початку файлу
+st.markdown(
+    """
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V589LFJ6DD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', 'G-V589LFJ6DD');
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 # 1. Наш словник перекладів
 translations = {
     "UA": {
