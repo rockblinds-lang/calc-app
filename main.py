@@ -1,4 +1,4 @@
-iimport streamlit as st
+import streamlit as st
 
 # 1. Наш словник перекладів
 translations = {
