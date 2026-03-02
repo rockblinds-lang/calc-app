@@ -2,9 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # Вставте це замість старого блоку з помилкою:
-components.html(
-    """
-    <script async src="https://www.googletagmanager.com"></script>
+<script async src="https://www.googletagmanager.com"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
