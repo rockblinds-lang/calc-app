@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components  # Додайте цей рядок теж
 
 # Ось сюди ми "вклинюємо" код аналітики:
-components.html(
+st.markdown(
     """
     <script async src="https://www.googletagmanager.com"></script>
     <script>
@@ -12,7 +12,7 @@ components.html(
         gtag('config', 'G-V589LFJ6DD');
     </script>
     """,
-    height=0,
+    unsafe_allow_html=True
 )
 
 # 1. Наш словник перекладів
