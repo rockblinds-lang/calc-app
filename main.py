@@ -1,18 +1,21 @@
 import streamlit as st
-from streamlit_analytics2 import track # Додаємо це
-# Ось сюди ми "вклинюємо" код аналітики:
-st.markdown(
-    """
-    <script async src="https://www.googletagmanager.com"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-V589LFJ6DD');
-    </script>
-    """,
-    unsafe_allow_html=True
-)
+from streamlit_analytics2 import track
+
+# Початок обгортки (без відступу)
+with track():
+    # ТУТ ПІШОВ ВІДСТУП (4 пробіли або Tab) ДЛЯ ВСЬОГО КОДУ:
+    st.markdown(
+        """
+        <script async src="https://www.googletagmanager.com"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){{dataLayer.push(arguments);}}
+            gtag('js', new Date());
+            gtag('config', 'G-V589LFJ6DD');
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
 
 # 1. Наш словник перекладів
 translations = {
