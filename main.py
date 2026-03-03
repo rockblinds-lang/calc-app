@@ -1,6 +1,5 @@
 import streamlit as st
-import streamlit.components.v1 as components  # Додайте цей рядок теж
-
+from streamlit_analytics2 import track # Додаємо це
 # Ось сюди ми "вклинюємо" код аналітики:
 st.markdown(
     """
