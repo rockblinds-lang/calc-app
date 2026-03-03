@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_analytics2 import track
 
 # Початок обгортки (без відступу)
-with track(password="vash_parol123"):
+with track(unsafe_password="Pro_Tyre"):
     # ТУТ ПІШОВ ВІДСТУП (4 пробіли або Tab) ДЛЯ ВСЬОГО КОДУ:
     st.markdown(
         """
