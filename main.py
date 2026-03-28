@@ -167,7 +167,21 @@ if abs(cl_change_mm) > 15:
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
 st.markdown("""
-**"B-Sound". Місце, де народжуються хіти **  
+st.markdown("""
+<style>
+    .gradient-text {
+        font-family: 'Arial Black', sans-serif;
+        font-size: 38px;
+        background: -webkit-linear-gradient(#FF8C00, #FF4B4B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+</style>
+
+<p class="gradient-text">"B-Sound"</p>
+""", unsafe_allow_html=True) 
 ☀️ Твори без технічних обмежень — ми подбаємо про звук, а ти про драйв!  
 📍 м. Львів, вул. Замкнена,9 ( 
 📞 **Телефонуйте: 097 478 63 12  **
