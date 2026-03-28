@@ -166,7 +166,7 @@ if abs(cl_change_mm) > 15:
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
-st.markdown("""
+
 st.markdown("""
 <style>
     .gradient-text {
