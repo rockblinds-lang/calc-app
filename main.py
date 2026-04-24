@@ -1,21 +1,4 @@
 import streamlit as st
-from streamlit_analytics2 import track
-
-# Початок обгортки (без відступу)
-with track(unsafe_password="Pro_Tyre"):
-    # ТУТ ПІШОВ ВІДСТУП (4 пробіли або Tab) ДЛЯ ВСЬОГО КОДУ:
-    st.markdown(
-        """
-        <script async src="https://www.googletagmanager.com"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){{dataLayer.push(arguments);}}
-            gtag('js', new Date());
-            gtag('config', 'G-V589LFJ6DD');
-        </script>
-        """,
-        unsafe_allow_html=True
-    )
 
 # 1. Наш словник перекладів
 translations = {
@@ -166,40 +149,24 @@ if abs(cl_change_mm) > 15:
 
 # --- РЕКЛАМНИЙ БЛОК (Тепер він помітний!) ---
 st.success("🎁 СПЕЦІАЛЬНА ПРОПОЗИЦІЯ ВІД РОЗРОБНИКА")
-
 st.markdown("""
-<style>
-    .gradient-text {
-        font-family: 'Arial Black', sans-serif;
-        font-size: 38px;
-        background: -webkit-linear-gradient(#FF8C00, #FF4B4B);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-</style>
-
-<p class="gradient-text">"B-Sound"</p>
-""", unsafe_allow_html=True) 
-st.markdown("""
-🎹 Твори без технічних обмежень — ми подбаємо про звук, а ти про драйв!  
-➡️  м. Львів, вул. Замкнена, 9  
-📞 **Телефонуйте: 097 478 63 12**
+**Якісні жалюзі та ролети від "РОМІГО"**  
+☀️ Захистіть свою оселю від палкого сонця!  
+📍 м. Львів, вул. Зелена 115з (вхід з вул.Півколо)  
+📞 **Телефонуйте: 067 244 45 03**
 """)
-
 if st.button("🌐 Перейти на наш сайт"):
-    st.write("сайт на оновленні")
+    st.write("www.zaluzi.com.ua")
 
-st.caption("Розроблено спеціально для творчих автовласників.")
+st.caption("Розроблено спеціально для відповідальних автовласників.")
 
 
 # Твій Рекламний Блок
 with st.expander("🎁 Отримати бонус від розробника"):
-    st.success("Перша репетиція зі знижкою! Спробуй звук, у який ти закохаєшся")
-    st.write("☀️ Слідкуйте за знижками в застосунку!")
-    st.markdown("📞 ** Коментар чи вподобайка у нашу ФБ сторінку вітається **")
-    if st.button("🌐 ........."):
+    st.success("Якісні жалюзі та ролети від 'РОМІГО'")
+    st.write("☀️ Захистіть свою оселю від сонця!")
+    st.markdown("📞 **Телефонуйте: 067 244 45 03 **")
+    if st.button("🌐 www.zaluzi.com.ua"):
         st.write("Перенаправлення...")
 import segno
 from io import BytesIO
